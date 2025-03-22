@@ -5,7 +5,7 @@ namespace MiniIT.SupportScreen
 {
     public static class ScreenPointPosition
     {
-        private static Camera mainCamera = Camera.main;
+        public static Camera Camera { get; private set; } = Camera.main;
 
         public static Vector3 Get(ScreenSide side)
         {
@@ -14,23 +14,23 @@ namespace MiniIT.SupportScreen
             switch (side)
             {
                 case ScreenSide.Top:
-                    position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height));
+                    position = Camera.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height));
                     break;
 
                 case ScreenSide.Bottom:
-                    position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width / 2, 0));
+                    position = Camera.ScreenToWorldPoint(new Vector2(Screen.width / 2, 0));
                     break;
 
                 case ScreenSide.Right:
-                    position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height / 2));
+                    position = Camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height / 2));
                     break;
 
                 case ScreenSide.Left:
-                    position = mainCamera.ScreenToWorldPoint(new Vector2(0, Screen.height / 2));
+                    position = Camera.ScreenToWorldPoint(new Vector2(0, Screen.height / 2));
                     break;
 
                 default:
-                    position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height));
+                    position = Camera.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height));
                     break;
             }
 
@@ -39,10 +39,10 @@ namespace MiniIT.SupportScreen
 
         public static Vector2 GetTopRightPoint()
         {
-            return mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+            return Camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         }
 
-        public static Vector2 GetSizeSide(Enums.ScreenSide side)
+        public static Vector2 GetSizeSide(ScreenSide side)
         {
             Vector2 size;
 
