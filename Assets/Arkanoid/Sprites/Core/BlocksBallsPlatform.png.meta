@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: bf6a44aace719e748ac822b5755ada69
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2948817144260098557
+    second: edit sheet_0
+  - first:
+      213: 7978256842985294008
+    second: edit sheet_1
+  - first:
+      213: 6071254782589175817
+    second: edit sheet_2
+  - first:
+      213: -8262985797555943570
+    second: edit sheet_3
+  - first:
+      213: 5550621466833687676
+    second: edit sheet_4
+  - first:
+      213: -424248081951091982
+    second: edit sheet_5
+  - first:
+      213: -1064929604462189739
+    second: edit sheet_6
+  - first:
+      213: 8576458881694844320
+    second: edit sheet_7
+  - first:
+      213: 3191456715371836846
+    second: edit sheet_8
+  - first:
+      213: 4426282742659920389
+    second: edit sheet_9
+  - first:
+      213: 4323209446478011175
+    second: edit sheet_10
+  - first:
+      213: -1429771593125701449
+    second: edit sheet_11
+  - first:
+      213: 2942084040313962779
+    second: edit sheet_12
+  - first:
+      213: 4102972095946443742
+    second: edit sheet_13
+  - first:
+      213: -2671037918234176213
+    second: edit sheet_14
+  - first:
+      213: 164598362443998638
+    second: edit sheet_15
+  - first:
+      213: -3744608391228406586
+    second: edit sheet_16
+  - first:
+      213: -1740528546096873872
+    second: edit sheet_17
+  - first:
+      213: -8785031090449264617
+    second: edit sheet_18
+  - first:
+      213: -3785156376988674592
+    second: edit sheet_19
+  - first:
+      213: -542999160149428696
+    second: edit sheet_20
+  - first:
+      213: -1005086420827483
+    second: edit sheet_21
+  - first:
+      213: -6823380033232835813
+    second: edit sheet_22
+  - first:
+      213: -4617633552788504994
+    second: edit sheet_23
+  - first:
+      213: 1515922658897442332
+    second: edit sheet_24
+  - first:
+      213: -6904019376061793291
+    second: edit sheet_25
+  - first:
+      213: 1092809586174811408
+    second: edit sheet_26
+  - first:
+      213: -3169841470623584032
+    second: edit sheet_27
+  - first:
+      213: 2400433705384128841
+    second: edit sheet_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 03e88a8a6dd5f5043a7012970970dcd9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      edit sheet_0: -2948817144260098557
+      edit sheet_1: 7978256842985294008
+      edit sheet_10: 4323209446478011175
+      edit sheet_11: -1429771593125701449
+      edit sheet_12: 2942084040313962779
+      edit sheet_13: 4102972095946443742
+      edit sheet_14: -2671037918234176213
+      edit sheet_15: 164598362443998638
+      edit sheet_16: -3744608391228406586
+      edit sheet_17: -1740528546096873872
+      edit sheet_18: -8785031090449264617
+      edit sheet_19: -3785156376988674592
+      edit sheet_2: 6071254782589175817
+      edit sheet_20: -542999160149428696
+      edit sheet_21: -1005086420827483
+      edit sheet_22: -6823380033232835813
+      edit sheet_23: -4617633552788504994
+      edit sheet_24: 1515922658897442332
+      edit sheet_25: -6904019376061793291
+      edit sheet_26: 1092809586174811408
+      edit sheet_27: -3169841470623584032
+      edit sheet_28: 2400433705384128841
+      edit sheet_3: -8262985797555943570
+      edit sheet_4: 5550621466833687676
+      edit sheet_5: -424248081951091982
+      edit sheet_6: -1064929604462189739
+      edit sheet_7: 8576458881694844320
+      edit sheet_8: 3191456715371836846
+      edit sheet_9: 4426282742659920389
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
