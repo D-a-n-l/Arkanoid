@@ -11,7 +11,7 @@ namespace MiniIT.Core
 
         [Space(10)]
         [SerializeField]
-        private HitPreset[]    hitToDestroy = new HitPreset[1];
+        private Sprite[]       hitToDestroy = new Sprite[1];
 
         [Space(10)]
         [SerializeField]
@@ -36,25 +36,19 @@ namespace MiniIT.Core
             }
             else
             {
-                if (hitToDestroy[currentHit].Sprite != null)
+                if (hitToDestroy[currentHit] != null)
                 {
-                    spriteRenderer.sprite = hitToDestroy[currentHit].Sprite;
+                    spriteRenderer.sprite = hitToDestroy[currentHit];
                 }
             }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.TryGetComponent(out IDamagable damagable))
+            if (collision.transform.parent.TryGetComponent(out IDamagable damagable))
             {
                 OnHit(damagable.GetDamage());
             }
         }
-    }
-
-    [System.Serializable]
-    public struct HitPreset
-    {
-        public Sprite Sprite;
     }
 }
