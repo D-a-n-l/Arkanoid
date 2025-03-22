@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace MiniIT.Level
 {
-    public class CheckableCountDestroyed : IDisposable
+    public class CheckerCountDestroyed : IDisposable
     {
         private LevelConfig levelConfig = null;
 
         private int current = 0;
 
-        public CheckableCountDestroyed(LevelConfig levelConfig)
+        public CheckerCountDestroyed(LevelConfig levelConfig)
         {
             this.levelConfig = levelConfig;
 
