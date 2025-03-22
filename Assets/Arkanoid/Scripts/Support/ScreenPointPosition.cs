@@ -1,7 +1,7 @@
-namespace MiniIT.Screen
-{
-    using UnityEngine;
+using UnityEngine;
 
+namespace MiniIT.SupportScreen
+{
     public static class ScreenPointPosition
     {
         private static Camera mainCamera = Camera.main;
