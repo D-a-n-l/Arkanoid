@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace MiniIT.Core
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Bouncable : MonoBehaviour, IDamagable
     {
         [SerializeField]
@@ -23,7 +24,7 @@ namespace MiniIT.Core
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.parent.TryGetComponent(out IForcable forcable))
+            if (collision.collider.TryGetComponent(out IForcable forcable))
             {
                 OnForce(forcable, collision);
             }

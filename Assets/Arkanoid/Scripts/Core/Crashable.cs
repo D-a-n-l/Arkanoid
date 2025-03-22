@@ -45,7 +45,7 @@ namespace MiniIT.Core
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.parent.TryGetComponent(out IDamagable damagable))
+            if (collision.transform.TryGetComponent(out IDamagable damagable))
             {
                 OnHit(damagable.GetDamage());
             }
