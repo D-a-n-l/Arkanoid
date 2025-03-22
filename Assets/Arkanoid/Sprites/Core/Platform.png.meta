@@ -1,94 +1,10 @@
 fileFormatVersion: 2
-guid: bf6a44aace719e748ac822b5755ada69
+guid: 91ef3db2b27e4254987ef25072782296
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2948817144260098557
-    second: edit sheet_0
-  - first:
-      213: 7978256842985294008
-    second: edit sheet_1
-  - first:
-      213: 6071254782589175817
-    second: edit sheet_2
-  - first:
-      213: -8262985797555943570
-    second: edit sheet_3
-  - first:
-      213: 5550621466833687676
-    second: edit sheet_4
-  - first:
-      213: -424248081951091982
-    second: edit sheet_5
-  - first:
-      213: -1064929604462189739
-    second: edit sheet_6
-  - first:
-      213: 8576458881694844320
-    second: edit sheet_7
-  - first:
-      213: 3191456715371836846
-    second: edit sheet_8
-  - first:
-      213: 4426282742659920389
-    second: edit sheet_9
-  - first:
-      213: 4323209446478011175
-    second: edit sheet_10
-  - first:
-      213: -1429771593125701449
-    second: edit sheet_11
-  - first:
-      213: 2942084040313962779
-    second: edit sheet_12
-  - first:
-      213: 4102972095946443742
-    second: edit sheet_13
-  - first:
-      213: -2671037918234176213
-    second: edit sheet_14
-  - first:
-      213: 164598362443998638
-    second: edit sheet_15
-  - first:
-      213: -3744608391228406586
-    second: edit sheet_16
-  - first:
-      213: -1740528546096873872
-    second: edit sheet_17
-  - first:
-      213: -8785031090449264617
-    second: edit sheet_18
-  - first:
-      213: -3785156376988674592
-    second: edit sheet_19
-  - first:
-      213: -542999160149428696
-    second: edit sheet_20
-  - first:
-      213: -1005086420827483
-    second: edit sheet_21
-  - first:
-      213: -6823380033232835813
-    second: edit sheet_22
-  - first:
-      213: -4617633552788504994
-    second: edit sheet_23
-  - first:
-      213: 1515922658897442332
-    second: edit sheet_24
-  - first:
-      213: -6904019376061793291
-    second: edit sheet_25
-  - first:
-      213: 1092809586174811408
-    second: edit sheet_26
-  - first:
-      213: -3169841470623584032
-    second: edit sheet_27
-  - first:
-      213: 2400433705384128841
-    second: edit sheet_28
+      213: 2695397407002535339
+    second: Platform_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -156,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 64
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -221,12 +137,34 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BasePlatform
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 48
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba525ec29a9f76520800000000000000
+      internalID: 2695397407002535339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 03e88a8a6dd5f5043a7012970970dcd9
+    spriteID: 5108eb1cae1b3c340acc1cf5d0ded86b
     internalID: 0
     vertices: []
     indices: 
@@ -236,35 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      edit sheet_0: -2948817144260098557
-      edit sheet_1: 7978256842985294008
-      edit sheet_10: 4323209446478011175
-      edit sheet_11: -1429771593125701449
-      edit sheet_12: 2942084040313962779
-      edit sheet_13: 4102972095946443742
-      edit sheet_14: -2671037918234176213
-      edit sheet_15: 164598362443998638
-      edit sheet_16: -3744608391228406586
-      edit sheet_17: -1740528546096873872
-      edit sheet_18: -8785031090449264617
-      edit sheet_19: -3785156376988674592
-      edit sheet_2: 6071254782589175817
-      edit sheet_20: -542999160149428696
-      edit sheet_21: -1005086420827483
-      edit sheet_22: -6823380033232835813
-      edit sheet_23: -4617633552788504994
-      edit sheet_24: 1515922658897442332
-      edit sheet_25: -6904019376061793291
-      edit sheet_26: 1092809586174811408
-      edit sheet_27: -3169841470623584032
-      edit sheet_28: 2400433705384128841
-      edit sheet_3: -8262985797555943570
-      edit sheet_4: 5550621466833687676
-      edit sheet_5: -424248081951091982
-      edit sheet_6: -1064929604462189739
-      edit sheet_7: 8576458881694844320
-      edit sheet_8: 3191456715371836846
-      edit sheet_9: 4426282742659920389
+      BasePlatform: 2695397407002535339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
