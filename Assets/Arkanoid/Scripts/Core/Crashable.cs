@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using MiniIT.Level;
 
 namespace MiniIT.Core
 {
@@ -30,6 +31,8 @@ namespace MiniIT.Core
 
             if (currentHit >= hitToDestroy.Length)
             {
+                CrashableEvent.onDestroyed?.Invoke(1);
+
                 onDestroyed?.Invoke();
 
                 Destroy(gameObject);
