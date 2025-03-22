@@ -23,7 +23,7 @@ namespace MiniIT.Core
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.TryGetComponent(out IForcable forcable))
+            if (collision.transform.parent.TryGetComponent(out IForcable forcable))
             {
                 OnForce(forcable, collision);
             }
