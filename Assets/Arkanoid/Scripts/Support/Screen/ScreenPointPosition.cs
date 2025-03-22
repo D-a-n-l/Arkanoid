@@ -1,4 +1,5 @@
 using UnityEngine;
+using MiniIT.Enums;
 
 namespace MiniIT.SupportScreen
 {
@@ -6,25 +7,25 @@ namespace MiniIT.SupportScreen
     {
         private static Camera mainCamera = Camera.main;
 
-        public static Vector3 Get(Enums.ScreenSide side)
+        public static Vector3 Get(ScreenSide side)
         {
             Vector3 position;
 
             switch (side)
             {
-                case Enums.ScreenSide.Top:
+                case ScreenSide.Top:
                     position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height));
                     break;
 
-                case Enums.ScreenSide.Bottom:
+                case ScreenSide.Bottom:
                     position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width / 2, 0));
                     break;
 
-                case Enums.ScreenSide.Right:
+                case ScreenSide.Right:
                     position = mainCamera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height / 2));
                     break;
 
-                case Enums.ScreenSide.Left:
+                case ScreenSide.Left:
                     position = mainCamera.ScreenToWorldPoint(new Vector2(0, Screen.height / 2));
                     break;
 
@@ -47,19 +48,19 @@ namespace MiniIT.SupportScreen
 
             switch (side)
             {
-                case Enums.ScreenSide.Top:
+                case ScreenSide.Top:
                     size = new Vector2(GetTopRightPoint().x * 2, 1f);
                     break;
 
-                case Enums.ScreenSide.Bottom:
+                case ScreenSide.Bottom:
                     size = new Vector2(GetTopRightPoint().x * 2, 1f);
                     break;
 
-                case Enums.ScreenSide.Right:
+                case ScreenSide.Right:
                     size = new Vector2(1f, GetTopRightPoint().y * 2);
                     break;
 
-                case Enums.ScreenSide.Left:
+                case ScreenSide.Left:
                     size = new Vector2(1f, GetTopRightPoint().y * 2);
                     break;
 
