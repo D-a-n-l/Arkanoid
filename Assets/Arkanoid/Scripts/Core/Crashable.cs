@@ -1,40 +1,60 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider2D))]
-public class Crashable : MonoBehaviour
+namespace MiniIT.Core
 {
-    [SerializeField]
-    private HitPreset[] _hitToDestroy = new HitPreset[1];
-
-    private int _currentHit = 0;
-
-    [SerializeField]
-    private UnityEvent OnHitted;
-    public SpriteRenderer _spriteRenderer;
-    private void OnHit()
+    [RequireComponent(typeof(Collider2D))]
+    public class Crashable : MonoBehaviour
     {
-        _currentHit++;
+        [SerializeField]
+        private SpriteRenderer spriteRenderer = null;
 
-        OnHitted?.Invoke();
+        [Space(10)]
+        [SerializeField]
+        private HitPreset[]    hitToDestroy = new HitPreset[1];
 
-        if (_currentHit >= _hitToDestroy.Length)
-            Destroy(gameObject);
-        else
-            _spriteRenderer.sprite = _hitToDestroy[_currentHit].Sprite;
-    }
+        [Space(10)]
+        [SerializeField]
+        private UnityEvent     onHitted = new UnityEvent();
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.GetComponent<Bouncable>())
+        [SerializeField]
+        private UnityEvent     onDestroyed = new UnityEvent();
+
+        private int            currentHit = 0;
+
+        private void OnHit(int damage)
         {
-            OnHit();
+            currentHit += damage;
+
+            onHitted?.Invoke();
+
+            if (currentHit >= hitToDestroy.Length)
+            {
+                onDestroyed?.Invoke();
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                if (hitToDestroy[currentHit].Sprite != null)
+                {
+                    spriteRenderer.sprite = hitToDestroy[currentHit].Sprite;
+                }
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.transform.TryGetComponent(out IDamagable damagable))
+            {
+                OnHit(damagable.GetDamage());
+            }
         }
     }
-}
 
-[System.Serializable]
-public class HitPreset
-{
-    public Sprite Sprite;
+    [System.Serializable]
+    public struct HitPreset
+    {
+        public Sprite Sprite;
+    }
 }

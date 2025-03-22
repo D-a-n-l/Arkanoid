@@ -1,21 +1,8 @@
 using UnityEngine;
 
+
 public class Movable : MonoBehaviour, IForcable
 {
-    [Min(0.01f)]
-    [SerializeField]
-    private float _speed;
-
-    private float edgeX;
-
-    private float edgeXX;
-
-    private void Start()
-    {
-        edgeX = DetectingEdgeScreen.Detect(Enums.Direction.Left).x;
-        edgeXX = DetectingEdgeScreen.Detect(Enums.Direction.Right).x;
-    }
-
     private void Update()
     {
 #if UNITY_ANDROID
@@ -35,11 +22,20 @@ public class Movable : MonoBehaviour, IForcable
         {
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            transform.position = new Vector2(
-                Mathf.Clamp(touchPosition.x, edgeX, edgeXX),
-                transform.position.y
-            );
+            transform.position = new Vector2(touchPosition.x, transform.position.y);
         }
 #endif
     }
+
+    #region IForcable
+    public Vector2 Force(Transform enterObject, Collision2D collision)
+    {
+        float x = enterObject.position.x - collision.transform.position.x;
+        float width = collision.collider.bounds.size.x / 2;
+
+        float bounceAngle = x / width;
+
+        return new Vector2(bounceAngle, 1).normalized;
+    }
+    #endregion
 }

@@ -1,31 +1,33 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Bouncable : MonoBehaviour
+namespace MiniIT.Core
 {
-    [Min(0.01f)]
-    [SerializeField]
-    private float _baseSpeed = 50;
-
-    private Rigidbody2D _rigidbody;
-
-    private void Start()
+    public class Bouncable : MonoBehaviour, IDamagable
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
+        [SerializeField]
+        private Rigidbody2D rigidbody = null;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.TryGetComponent(out IForcable forcable))
+        [Min(0.01f)]
+        [SerializeField]
+        private float       speed = 50f;
+
+        [Min(1)]
+        [SerializeField]
+        private int         damage = 1;
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            float x = transform.position.x - collision.transform.position.x;
-            float width = collision.collider.bounds.size.x / 2;
-
-            float bounceAngle = x / width;
-
-            Vector2 newDirection = new Vector2(bounceAngle, 1).normalized;
-
-            _rigidbody.linearVelocity = newDirection * _baseSpeed;
+            if (collision.transform.TryGetComponent(out IForcable forcable))
+            {
+                rigidbody.linearVelocity = forcable.Force(transform, collision) * speed;
+            }
         }
+
+        #region IDamagable
+        public int GetDamage()
+        {
+            return damage;
+        }
+        #endregion
     }
 }
