@@ -8,18 +8,18 @@ namespace MiniIT.Level
     public class LevelConfig : ScriptableObject
     {
         [field: SerializeField]
-        public Movable Platform { get; private set; } = null;
+        public GameObjectPreset   Platform { get; private set; } = new GameObjectPreset();
 
         [field: SerializeField]
-        public Bouncable Ball { get; private set; } = null;
+        public GameObjectPreset   Ball { get; private set; } = new GameObjectPreset();
 
         [field: SerializeField]
-        public CrashablePreset[] Crashables { get; private set; } = new CrashablePreset[1];
+        public GameObjectPreset[] Crashables { get; private set; } = new GameObjectPreset[1];
 
         [Button]
         public void InitBlocks()
         {
-            foreach (CrashablePreset crashable in Crashables)
+            foreach (GameObjectPreset crashable in Crashables)
             {
                 Instantiate(crashable.Prefab, crashable.Position, Quaternion.Euler(crashable.Rotation));
             }
@@ -27,9 +27,9 @@ namespace MiniIT.Level
     }
 
     [System.Serializable]
-    public struct CrashablePreset
+    public struct GameObjectPreset
     {
-        public Crashable Prefab;
+        public GameObject Prefab;
 
         public Vector3 Position;
 
