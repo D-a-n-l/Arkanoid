@@ -2,34 +2,37 @@ using MiniIT.Core;
 using NaughtyAttributes;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Level Config", menuName = "Configs/Level")]
-public class LevelConfig : ScriptableObject
+namespace MiniIT.Level
 {
-    [field: SerializeField]
-    public Movable           Platform { get; private set; } = null;
-
-    [field: SerializeField]
-    public Bouncable         Ball { get; private set; } = null;
-
-    [field: SerializeField]
-    public CrashablePreset[] Crashables { get; private set; } = new CrashablePreset[1];
-
-    [Button]
-    public void InitBlocks()
+    [CreateAssetMenu(fileName = "Level Config", menuName = "Configs/Level")]
+    public class LevelConfig : ScriptableObject
     {
-        foreach (CrashablePreset crashable in Crashables)
+        [field: SerializeField]
+        public Movable Platform { get; private set; } = null;
+
+        [field: SerializeField]
+        public Bouncable Ball { get; private set; } = null;
+
+        [field: SerializeField]
+        public CrashablePreset[] Crashables { get; private set; } = new CrashablePreset[1];
+
+        [Button]
+        public void InitBlocks()
         {
-            Instantiate(crashable.Prefab, crashable.Position, Quaternion.Euler(crashable.Rotation));
+            foreach (CrashablePreset crashable in Crashables)
+            {
+                Instantiate(crashable.Prefab, crashable.Position, Quaternion.Euler(crashable.Rotation));
+            }
         }
     }
-}
 
-[System.Serializable]
-public struct CrashablePreset
-{
-    public Crashable Prefab;
+    [System.Serializable]
+    public struct CrashablePreset
+    {
+        public Crashable Prefab;
 
-    public Vector3   Position;
+        public Vector3 Position;
 
-    public Vector3   Rotation;
+        public Vector3 Rotation;
+    }
 }

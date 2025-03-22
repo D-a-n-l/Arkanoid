@@ -1,6 +1,9 @@
 using System;
 
-public static class CrashableEvent
+namespace MiniIT.Level
 {
-    public static Action<int> onDestroyed;
+    public static class CrashableEvent
+    {
+        public static Action<int> onDestroyed;
+    }
 }
