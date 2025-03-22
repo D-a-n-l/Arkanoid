@@ -256,9 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 243897229}
   hitToDestroy:
-  - Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   onHitted:
     m_PersistentCalls:
       m_Calls: []
@@ -747,9 +747,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 918368025}
   hitToDestroy:
-  - Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   onHitted:
     m_PersistentCalls:
       m_Calls: []
@@ -901,9 +901,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1874758318}
   hitToDestroy:
-  - Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   onHitted:
     m_PersistentCalls:
       m_Calls: []
