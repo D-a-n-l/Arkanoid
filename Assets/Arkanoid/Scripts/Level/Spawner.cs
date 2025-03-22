@@ -18,7 +18,7 @@ namespace MiniIT.Level
 
         public IEnumerator Start()
         {
-            foreach (CrashablePreset crashable in levelConfig.Crashables)
+            foreach (GameObjectPreset crashable in levelConfig.Crashables)
             {
                 yield return wait;
 
