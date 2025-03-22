@@ -22,6 +22,11 @@ namespace MiniIT.Core
         [SerializeField]
         private UnityEvent  onForced = new UnityEvent();
 
+        public void ChangeBodyType(RigidbodyType2D type)
+        {
+            rigidbody.bodyType = type;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.TryGetComponent(out IForcable forcable))
