@@ -3,6 +3,7 @@ using Zenject;
 
 namespace MiniIT.Core
 {
+    [RequireComponent(typeof(Collider2D))]
     public class Movable : MonoBehaviour, IForcable
     {
         [Inject]
