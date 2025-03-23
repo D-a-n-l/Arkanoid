@@ -1,4 +1,5 @@
 using MiniIT.Core;
+using System.Collections;
 using UnityEngine;
 using Zenject;
 
@@ -18,7 +19,7 @@ namespace MiniIT.Level
 
         private IInputClicker inputClicker = null;
 
-        private bool          isClicked = false;
+        private bool          isClicked = true;
 
         [Inject]
         public void Construct(LevelConfig levelConfig, IInputClicker inputClicker, Bouncable bouncable)
@@ -30,15 +31,17 @@ namespace MiniIT.Level
             ball = bouncable;
         }
 
-        private void Awake()
+        private IEnumerator Start()
         {
             CheckerCountDestroyed checker = new CheckerCountDestroyed(levelConfig);
 
             spawner = new Spawner(levelConfig, delayBetweenSpawn);
 
-            StartCoroutine(spawner.Start());
-
             ball.ChangeBodyType(RigidbodyType2D.Kinematic);
+
+            yield return StartCoroutine(spawner.Start());
+
+            isClicked = false;
         }
 
         private void Update()
