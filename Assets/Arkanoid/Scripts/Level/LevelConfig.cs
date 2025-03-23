@@ -1,6 +1,5 @@
-using MiniIT.Core;
-using NaughtyAttributes;
 using UnityEngine;
+using MiniIT.Presets;
 
 namespace MiniIT.Level
 {
@@ -8,31 +7,12 @@ namespace MiniIT.Level
     public class LevelConfig : ScriptableObject
     {
         [field: SerializeField]
-        public GameObjectPreset   Platform { get; private set; } = new GameObjectPreset();
+        public MovablePreset      Platform { get; private set; } = new MovablePreset();
 
         [field: SerializeField]
-        public GameObjectPreset   Ball { get; private set; } = new GameObjectPreset();
+        public BouncablePreset    Ball { get; private set; } = new BouncablePreset();
 
         [field: SerializeField]
         public GameObjectPreset[] Crashables { get; private set; } = new GameObjectPreset[1];
-
-        [Button]
-        public void InitBlocks()
-        {
-            foreach (GameObjectPreset crashable in Crashables)
-            {
-                Instantiate(crashable.Prefab, crashable.Position, Quaternion.Euler(crashable.Rotation));
-            }
-        }
-    }
-
-    [System.Serializable]
-    public struct GameObjectPreset
-    {
-        public GameObject Prefab;
-
-        public Vector3 Position;
-
-        public Vector3 Rotation;
     }
 }
