@@ -31,7 +31,7 @@ namespace MiniIT.Core
 
             if (currentHit >= hitToDestroy.Length)
             {
-                CrashableEvent.onDestroyed?.Invoke(1);
+                CoreEvents.onDestroyedCrashable?.Invoke(1);
 
                 onDestroyed?.Invoke();
 

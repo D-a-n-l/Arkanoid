@@ -13,13 +13,13 @@ namespace MiniIT.Level
         {
             this.levelConfig = levelConfig;
 
-            CrashableEvent.onDestroyed += OnCheck;
+            CoreEvents.onDestroyedCrashable += OnCheck;
         }
 
         #region IDisposable
         public void Dispose()
         {
-            CrashableEvent.onDestroyed -= OnCheck;
+            CoreEvents.onDestroyedCrashable -= OnCheck;
         }
         #endregion
 
