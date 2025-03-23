@@ -1,4 +1,5 @@
 using MiniIT.Core;
+using MiniIT.Level;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -8,7 +9,7 @@ public class CheckerBall : MonoBehaviour
     {
         if (collision.transform.GetComponent<Bouncable>())
         {
-            Debug.Log("Lose");
+            CoreEvents.onFalledBall?.Invoke();
         }
     }
 }
