@@ -39,9 +39,16 @@ namespace MiniIT.Level
 
             ball.ChangeBodyType(RigidbodyType2D.Kinematic);
 
+            CoreEvents.onFalledBall += Lose;
+
             yield return StartCoroutine(spawner.Start());
 
             isClicked = false;
+        }
+
+        private void OnDisable()
+        {
+            CoreEvents.onFalledBall -= Lose;
         }
 
         private void Update()
@@ -54,6 +61,11 @@ namespace MiniIT.Level
 
                 ball.ChangeBodyType(RigidbodyType2D.Dynamic);
             }
+        }
+
+        public void Lose()
+        {
+            Debug.Log("Loseeee");
         }
     }
 }
