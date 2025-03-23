@@ -18,7 +18,10 @@ namespace MiniIT.Level
         [Inject]
         private Bouncable ball;
 
-        private bool isClick = false;
+        private bool isClicked = false;
+
+        [Inject]
+        private IInputClicker inputClicker;
 
         private void Awake()
         {
@@ -33,13 +36,13 @@ namespace MiniIT.Level
 
         private void Update()
         {
-            if (UnityEngine.Input.GetMouseButtonDown(0) && isClick == false)
+            if (isClicked == false && inputClicker.OnClicked() == true)
             {
-                isClick = true;
-
-                ball.ChangeBodyType(RigidbodyType2D.Dynamic);
+                isClicked = true;
 
                 ball.transform.SetParent(null);
+
+                ball.ChangeBodyType(RigidbodyType2D.Dynamic);
             }
         }
     }
