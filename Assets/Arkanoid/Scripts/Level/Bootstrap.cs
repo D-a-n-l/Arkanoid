@@ -8,20 +8,27 @@ namespace MiniIT.Level
     {
         [Min(0)]
         [SerializeField]
-        private float       delayBetweenSpawn = 1f;
+        private float         delayBetweenSpawn = 1f;
+
+        private LevelConfig   levelConfig = null;
+
+        private Spawner       spawner = null;
+
+        private Bouncable     ball = null;
+
+        private IInputClicker inputClicker = null;
+
+        private bool          isClicked = false;
 
         [Inject]
-        private LevelConfig levelConfig = null;
+        public void Construct(LevelConfig levelConfig, IInputClicker inputClicker, Bouncable bouncable)
+        {
+            this.levelConfig = levelConfig;
 
-        private Spawner     spawner;
+            this.inputClicker = inputClicker;
 
-        [Inject]
-        private Bouncable ball;
-
-        private bool isClicked = false;
-
-        [Inject]
-        private IInputClicker inputClicker;
+            ball = bouncable;
+        }
 
         private void Awake()
         {
