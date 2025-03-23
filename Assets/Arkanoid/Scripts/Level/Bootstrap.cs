@@ -39,6 +39,8 @@ namespace MiniIT.Level
 
             ball.ChangeBodyType(RigidbodyType2D.Kinematic);
 
+            CoreEvents.onAllDestroyedCrashables += Win;
+
             CoreEvents.onFalledBall += Lose;
 
             yield return StartCoroutine(spawner.Start());
@@ -48,6 +50,8 @@ namespace MiniIT.Level
 
         private void OnDisable()
         {
+            CoreEvents.onAllDestroyedCrashables -= Win;
+
             CoreEvents.onFalledBall -= Lose;
         }
 
@@ -66,6 +70,11 @@ namespace MiniIT.Level
         public void Lose()
         {
             Debug.Log("Loseeee");
+        }
+
+        public void Win()
+        {
+            Debug.Log("Wiiinnn");
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MiniIT.Level
 
             if (current == levelConfig.Crashables.Length)
             {
-                Debug.Log("Win");
+                CoreEvents.onAllDestroyedCrashables?.Invoke();
             }
         }
     }
