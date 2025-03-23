@@ -3,7 +3,7 @@ namespace MiniIT.Input
     using UnityEngine;
     using MiniIT.SupportScreen;
 
-    public class DesktopInput : IInput
+    public class DesktopInput : IInput, IInputClicker
     {
         #region IInput
         public Vector2 Position(Transform transform)
@@ -11,6 +11,18 @@ namespace MiniIT.Input
             Vector2 mousePosition = ScreenPointPosition.Camera.ScreenToWorldPoint(Input.mousePosition);
 
             return new Vector2(mousePosition.x, transform.position.y);
+        }
+        #endregion
+
+        #region IInputClicker
+        public bool OnClicked()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                return true;
+            }
+
+            return false;
         }
         #endregion
     }
