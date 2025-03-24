@@ -104,6 +104,8 @@ namespace MiniIT.Level
         public void Win()
         {
             canvasWin.enabled = true;
+
+            CoreEvents.onFalledBall -= Lose;
         }
 
         public void Lose()
