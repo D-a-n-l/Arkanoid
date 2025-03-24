@@ -1,4 +1,5 @@
 using MiniIT.Core;
+using MiniIT.Installers;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -18,8 +19,6 @@ namespace MiniIT.Level
         [SerializeField]
         private Canvas        canvasLose;
 
-        private LevelConfig   levelConfig = null;
-
         private Movable       platform = null;
 
         private Bouncable     ball = null;
@@ -31,17 +30,15 @@ namespace MiniIT.Level
         private bool          isClicked = true;
 
         [Inject]
-        public void Construct(LevelConfig levelConfig, IInputClicker inputClicker, Movable movable, Bouncable bouncable)
+        public void Construct(IInputClicker inputClicker, Movable movable, Bouncable bouncable)
         {
-            this.levelConfig = levelConfig;
-
             this.inputClicker = inputClicker;
 
             platform = movable;
 
             ball = bouncable;
 
-            CheckerCountDestroyed checker = new CheckerCountDestroyed(levelConfig);
+            CheckerCountDestroyed checker = new CheckerCountDestroyed(LevelInstaller.CurrentLevel);
 
             CoreEvents.onAllDestroyedCrashables += Win;
 
@@ -66,7 +63,7 @@ namespace MiniIT.Level
 
         private IEnumerator StartGameCoroutine()
         {
-            spawner = new Spawner(levelConfig, delayBetweenSpawn);
+            spawner = new Spawner(LevelInstaller.CurrentLevel, delayBetweenSpawn);
 
             ball.ChangeBodyType(RigidbodyType2D.Kinematic);
 
@@ -86,7 +83,7 @@ namespace MiniIT.Level
 
             ball.OnZeroingVelocity();
 
-            ball.transform.position = levelConfig.Ball.Position;
+            ball.transform.position = LevelInstaller.CurrentLevel.Ball.Position;
 
             ball.transform.SetParent(platform.transform, false);
 
