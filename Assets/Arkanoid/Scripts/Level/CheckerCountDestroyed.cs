@@ -13,12 +13,16 @@ namespace MiniIT.Level
             this.levelConfig = levelConfig;
 
             CoreEvents.onDestroyedCrashable += OnCheck;
+
+            CoreEvents.onFalledBall += OnZeroing;
         }
 
         #region IDisposable
         public void Dispose()
         {
             CoreEvents.onDestroyedCrashable -= OnCheck;
+
+            CoreEvents.onFalledBall -= OnZeroing;
         }
         #endregion
 
@@ -28,10 +32,15 @@ namespace MiniIT.Level
 
             if (current == levelConfig.Crashables.Length)
             {
-                current = 0;
+                OnZeroing();
 
                 CoreEvents.onAllDestroyedCrashables?.Invoke();
             }
+        }
+
+        private void OnZeroing()
+        {
+            current = 0;
         }
     }
 }
