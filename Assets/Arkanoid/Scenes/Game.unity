@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26404b0953a38f7438e43c459c31de4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelConfig: {fileID: 11400000, guid: ea5b7ace629be4f47b7dd306b4574a35, type: 2}
+  allLevels: {fileID: 11400000, guid: 35686c3fd104fcd4994a5eb2fa79b7e9, type: 2}
 --- !u!1 &996788952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 943972178766460468, guid: 51236cd6014a86445ac97c26333298b6, type: 3}
