@@ -11,6 +11,13 @@ namespace MiniIT.Level
         [SerializeField]
         private float         delayBetweenSpawn = 1f;
 
+        [Space(10)]
+        [SerializeField]
+        private Canvas        canvasWin;
+
+        [SerializeField]
+        private Canvas        canvasLose;
+
         private LevelConfig   levelConfig = null;
 
         private Movable       platform = null;
@@ -71,7 +78,13 @@ namespace MiniIT.Level
 
         private IEnumerator RestartGameCoroutine()
         {
-            ball.transform.SetParent(platform.transform);
+            yield return StartCoroutine(spawner.UnloadAll());
+
+            ball.OnZeroingVelocity();
+
+            ball.transform.position = levelConfig.Ball.Position;
+
+            ball.transform.SetParent(platform.transform, false);
 
             yield return StartCoroutine(StartGameCoroutine());
         }
@@ -88,14 +101,14 @@ namespace MiniIT.Level
             }
         }
 
-        public void Lose()
-        {
-            Debug.Log("Loseeee");
-        }
-
         public void Win()
         {
-            Debug.Log("Wiiinnn");
+            canvasWin.enabled = true;
+        }
+
+        public void Lose()
+        {
+            canvasLose.enabled = true;
         }
     }
 }
