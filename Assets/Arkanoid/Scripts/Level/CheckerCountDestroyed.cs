@@ -1,17 +1,15 @@
+using MiniIT.Installers;
 using System;
+using UnityEngine;
 
 namespace MiniIT.Level
 {
     public class CheckerCountDestroyed : IDisposable
     {
-        private LevelConfig levelConfig = null;
-
         private int current = 0;
 
-        public CheckerCountDestroyed(LevelConfig levelConfig)
+        public CheckerCountDestroyed()
         {
-            this.levelConfig = levelConfig;
-
             CoreEvents.onDestroyedCrashable += OnCheck;
 
             CoreEvents.onFalledBall += OnZeroing;
@@ -30,7 +28,7 @@ namespace MiniIT.Level
         {
             current += value;
 
-            if (current == levelConfig.Crashables.Length)
+            if (current == LevelInstaller.CurrentLevel.Crashables.Length)
             {
                 OnZeroing();
 
