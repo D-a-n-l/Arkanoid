@@ -10,28 +10,32 @@ namespace MiniIT.Level
     {
         [Min(0)]
         [SerializeField]
-        private float         delayBetweenSpawn = 1f;
+        private float           delayBetweenSpawn = 1f;
 
         [Space(10)]
         [SerializeField]
-        private Canvas        canvasWin;
+        private Canvas          canvasWin = null;
 
         [SerializeField]
-        private Canvas        canvasLose;
+        private Canvas          canvasLose = null;
 
-        private Movable       platform = null;
+        private AllLevelsConfig allLevels = null;
 
-        private Bouncable     ball = null;
+        private Movable         platform = null;
 
-        private Spawner       spawner = null;
+        private Bouncable       ball = null;
 
-        private IInputClicker inputClicker = null;
+        private Spawner         spawner = null;
 
-        private bool          isClicked = true;
+        private IInputClicker   inputClicker = null;
+
+        private bool            isClicked = true;
 
         [Inject]
-        public void Construct(IInputClicker inputClicker, Movable movable, Bouncable bouncable)
+        public void Construct(AllLevelsConfig allLevels, IInputClicker inputClicker, Movable movable, Bouncable bouncable)
         {
+            this.allLevels = allLevels;
+
             this.inputClicker = inputClicker;
 
             platform = movable;
@@ -88,6 +92,15 @@ namespace MiniIT.Level
             ball.transform.SetParent(platform.transform, false);
 
             yield return StartCoroutine(StartGameCoroutine());
+        }
+
+        public void NextLevel()
+        {
+            CoreEvents.onFalledBall += Lose;
+
+            LevelInstaller.RandomLevel(allLevels);
+
+            RestartGame();
         }
 
         private void Update()
