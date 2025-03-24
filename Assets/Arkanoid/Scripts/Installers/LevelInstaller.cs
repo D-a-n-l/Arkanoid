@@ -22,8 +22,6 @@ namespace MiniIT.Installers
 
             ball.transform.SetParent(platform.transform, false);
 
-            //ball.transform.position = levelConfig.Ball.Position;
-
             Container.Bind<Bouncable>().FromInstance(ball);
         }
     }
