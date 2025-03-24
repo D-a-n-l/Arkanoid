@@ -13,39 +13,32 @@ namespace MiniIT.Level
 
         private LevelConfig   levelConfig = null;
 
-        private Spawner       spawner = null;
+        private Movable       platform = null;
 
         private Bouncable     ball = null;
+
+        private Spawner       spawner = null;
 
         private IInputClicker inputClicker = null;
 
         private bool          isClicked = true;
 
         [Inject]
-        public void Construct(LevelConfig levelConfig, IInputClicker inputClicker, Bouncable bouncable)
+        public void Construct(LevelConfig levelConfig, IInputClicker inputClicker, Movable movable, Bouncable bouncable)
         {
             this.levelConfig = levelConfig;
 
             this.inputClicker = inputClicker;
 
+            platform = movable;
+
             ball = bouncable;
-        }
 
-        private IEnumerator Start()
-        {
             CheckerCountDestroyed checker = new CheckerCountDestroyed(levelConfig);
-
-            spawner = new Spawner(levelConfig, delayBetweenSpawn);
-
-            ball.ChangeBodyType(RigidbodyType2D.Kinematic);
 
             CoreEvents.onAllDestroyedCrashables += Win;
 
             CoreEvents.onFalledBall += Lose;
-
-            yield return StartCoroutine(spawner.Start());
-
-            isClicked = false;
         }
 
         private void OnDisable()
@@ -53,6 +46,34 @@ namespace MiniIT.Level
             CoreEvents.onAllDestroyedCrashables -= Win;
 
             CoreEvents.onFalledBall -= Lose;
+        }
+
+        private void Start()
+        {
+            StartCoroutine(StartGameCoroutine());
+        }
+
+        private IEnumerator StartGameCoroutine()
+        {
+            spawner = new Spawner(levelConfig, delayBetweenSpawn);
+
+            ball.ChangeBodyType(RigidbodyType2D.Kinematic);
+
+            yield return StartCoroutine(spawner.Start());
+
+            isClicked = false;
+        }
+
+        public void RestartGame()
+        {
+            StartCoroutine(RestartGameCoroutine());
+        }
+
+        private IEnumerator RestartGameCoroutine()
+        {
+            ball.transform.SetParent(platform.transform);
+
+            yield return StartCoroutine(StartGameCoroutine());
         }
 
         private void Update()
