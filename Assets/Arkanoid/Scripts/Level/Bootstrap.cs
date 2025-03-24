@@ -42,7 +42,7 @@ namespace MiniIT.Level
 
             ball = bouncable;
 
-            CheckerCountDestroyed checker = new CheckerCountDestroyed(LevelInstaller.CurrentLevel);
+            CheckerCountDestroyed checker = new CheckerCountDestroyed();
 
             CoreEvents.onAllDestroyedCrashables += Win;
 
