@@ -18,7 +18,11 @@ namespace MiniIT.Installers
 
             Container.Bind<Movable>().FromInstance(platform);
 
-            Bouncable ball = Container.InstantiatePrefabForComponent<Bouncable>(levelConfig.Ball.Prefab, levelConfig.Ball.Position, Quaternion.Euler(levelConfig.Ball.Rotation), platform.transform);
+            Bouncable ball = Container.InstantiatePrefabForComponent<Bouncable>(levelConfig.Ball.Prefab, levelConfig.Ball.Position, Quaternion.Euler(levelConfig.Ball.Rotation), null);
+
+            ball.transform.SetParent(platform.transform, false);
+
+            //ball.transform.position = levelConfig.Ball.Position;
 
             Container.Bind<Bouncable>().FromInstance(ball);
         }
