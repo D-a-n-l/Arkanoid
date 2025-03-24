@@ -33,6 +33,11 @@ namespace MiniIT.Installers
         {
             int level = Random.Range(0, config.Levels.Length);
 
+            while (config.Levels[level] == CurrentLevel)
+            {
+                level = Random.Range(0, config.Levels.Length);
+            }
+
             return CurrentLevel = config.Levels[level];
         }
     }
