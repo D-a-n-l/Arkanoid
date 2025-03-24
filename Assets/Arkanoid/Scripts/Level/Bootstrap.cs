@@ -57,6 +57,10 @@ namespace MiniIT.Level
 
         private void Start()
         {
+            canvasWin.enabled = false;
+
+            canvasLose.enabled = false;
+
             StartCoroutine(StartGameCoroutine());
         }
 
