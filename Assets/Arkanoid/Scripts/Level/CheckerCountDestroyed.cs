@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace MiniIT.Level
 {
@@ -29,6 +28,8 @@ namespace MiniIT.Level
 
             if (current == levelConfig.Crashables.Length)
             {
+                current = 0;
+
                 CoreEvents.onAllDestroyedCrashables?.Invoke();
             }
         }
