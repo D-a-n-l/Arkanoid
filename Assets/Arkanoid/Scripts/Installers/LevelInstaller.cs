@@ -8,21 +8,30 @@ namespace MiniIT.Installers
     public class LevelInstaller : MonoInstaller
     {
         [SerializeField]
-        private LevelConfig levelConfig = null;
+        private AllLevelsConfig   allLevels = null;
+
+        public static LevelConfig CurrentLevel { get; private set; } = null;
 
         public override void InstallBindings()
         {
-            Container.Bind<LevelConfig>().FromInstance(levelConfig);
+            RandomLevel(allLevels);
 
-            Movable platform = Container.InstantiatePrefabForComponent<Movable>(levelConfig.Platform.Prefab, levelConfig.Platform.Position, Quaternion.Euler(levelConfig.Platform.Rotation), null);
+            Movable platform = Container.InstantiatePrefabForComponent<Movable>(CurrentLevel.Platform.Prefab, CurrentLevel.Platform.Position, Quaternion.Euler(CurrentLevel.Platform.Rotation), null);
 
             Container.Bind<Movable>().FromInstance(platform);
 
-            Bouncable ball = Container.InstantiatePrefabForComponent<Bouncable>(levelConfig.Ball.Prefab, levelConfig.Ball.Position, Quaternion.Euler(levelConfig.Ball.Rotation), null);
+            Bouncable ball = Container.InstantiatePrefabForComponent<Bouncable>(CurrentLevel.Ball.Prefab, CurrentLevel.Ball.Position, Quaternion.Euler(CurrentLevel.Ball.Rotation), null);
 
             ball.transform.SetParent(platform.transform, false);
 
             Container.Bind<Bouncable>().FromInstance(ball);
+        }
+
+        public static LevelConfig RandomLevel(AllLevelsConfig config)
+        {
+            int level = Random.Range(0, config.Levels.Length);
+
+            return CurrentLevel = config.Levels[level];
         }
     }
 }
