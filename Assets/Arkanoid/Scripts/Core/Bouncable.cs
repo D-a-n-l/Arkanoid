@@ -42,6 +42,11 @@ namespace MiniIT.Core
             onForced?.Invoke();
         }
 
+        public void OnZeroingVelocity()
+        {
+            rigidbody.linearVelocity = Vector3.zero;
+        }
+
         #region IDamagable
         public int GetDamage()
         {
