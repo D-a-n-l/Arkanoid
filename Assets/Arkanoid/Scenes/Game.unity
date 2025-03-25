@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 460871896}
   - component: {fileID: 460871895}
   - component: {fileID: 460871894}
+  - component: {fileID: 460871897}
   m_Layer: 0
   m_Name: RestartButton
   m_TagString: Untagged
@@ -459,6 +460,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 460871897}
+        m_TargetAssemblyTypeName: PlaybleSound, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &460871895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +510,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460871892}
   m_CullTransparentMesh: 1
+--- !u!114 &460871897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460871892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a3f5f88a12f84ea165839437175a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeSource: 1
+  clips:
+  - Clip: {fileID: 8300000, guid: 664d2e3f89410b646a8503006f97611f, type: 3}
+    Pitch:
+      Min: 0.7
+      Max: 1.5
+  - Clip: {fileID: 8300000, guid: a33bc8c21a6e75d4da872819f0de2599, type: 3}
+    Pitch:
+      Min: 0.7
+      Max: 1.5
 --- !u!1 &461094579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,9 +1142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d531d5607cee31c4e8e820207ff32f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Music>k__BackingField: {fileID: 0}
-  <Sound>k__BackingField: {fileID: 0}
-  <UI>k__BackingField: {fileID: 0}
+  <Music>k__BackingField: {fileID: 678044739}
+  <Sound>k__BackingField: {fileID: 1391401552}
+  <UI>k__BackingField: {fileID: 905716420}
 --- !u!4 &1031407587
 Transform:
   m_ObjectHideFlags: 0
@@ -1558,6 +1593,7 @@ GameObject:
   - component: {fileID: 1693536661}
   - component: {fileID: 1693536660}
   - component: {fileID: 1693536659}
+  - component: {fileID: 1693536662}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -1653,6 +1689,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1693536662}
+        m_TargetAssemblyTypeName: PlaybleSound, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1693536660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,6 +1739,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693536657}
   m_CullTransparentMesh: 1
+--- !u!114 &1693536662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693536657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a3f5f88a12f84ea165839437175a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeSource: 1
+  clips:
+  - Clip: {fileID: 8300000, guid: 664d2e3f89410b646a8503006f97611f, type: 3}
+    Pitch:
+      Min: 0.7
+      Max: 1.5
+  - Clip: {fileID: 8300000, guid: a33bc8c21a6e75d4da872819f0de2599, type: 3}
+    Pitch:
+      Min: 0.7
+      Max: 1.5
 --- !u!1 &1955251318
 GameObject:
   m_ObjectHideFlags: 0
