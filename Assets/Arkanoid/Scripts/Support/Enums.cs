@@ -11,4 +11,12 @@ namespace MiniIT.Enums
         /// <summary>Left screen side</summary>
         Left = 3,
     }
+
+    public enum TypeAudioSource
+    {
+        /// <summary>Source for Sound audio</summary>
+        Sound = 0,
+        /// <summary>Source for UI audio</summary>
+        UI = 1,
+    }
 }
