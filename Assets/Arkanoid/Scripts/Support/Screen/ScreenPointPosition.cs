@@ -34,6 +34,8 @@ namespace MiniIT.SupportScreen
                     break;
             }
 
+            position = new Vector3(position.x, position.y, 0f);
+
             return position;
         }
 
