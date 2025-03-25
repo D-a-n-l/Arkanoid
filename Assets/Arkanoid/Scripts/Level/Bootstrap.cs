@@ -9,11 +9,6 @@ namespace MiniIT.Level
 {
     public class Bootstrap : MonoBehaviour
     {
-        [Min(0)]
-        [SerializeField]
-        private float           delayBetweenSpawn = 1f;
-
-        [Space(10)]
         [SerializeField]
         private Canvas          canvasWin = null;
 
@@ -74,7 +69,7 @@ namespace MiniIT.Level
 
         private IEnumerator StartGameCoroutine()
         {
-            spawner = new Spawner(LevelInstaller.CurrentLevel, delayBetweenSpawn);
+            spawner = new Spawner(LevelInstaller.CurrentLevel, LevelInstaller.CurrentLevel.DelayBetweenSpawn);
 
             ball.ChangeBodyType(RigidbodyType2D.Kinematic);
 
