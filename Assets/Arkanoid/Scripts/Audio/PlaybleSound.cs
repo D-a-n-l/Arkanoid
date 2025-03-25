@@ -1,24 +1,52 @@
 using MiniIT.Enums;
 using UnityEngine;
-using Zenject;
 
 public class PlaybleSound : MonoBehaviour
 {
     [SerializeField]
-    private TypeAudioSource typeAudioSource = TypeAudioSource.Sound;
+    private TypeAudioSource typeSource = TypeAudioSource.Sound;
 
     [SerializeField]
-    private AudioClip[] clips = null;
+    private AudioClipPreset[] clips = null;
 
-    [SerializeField]
-    private float pitch = 1f;
-
-    public void PlayOneShot()
+    public void Play()
     {
         int clip = Random.Range(0, clips.Length);
 
-        AudioSources.Instance.UI.pitch = pitch;
+        float pitch = Random.Range(clips[clip].Pitch.Min, clips[clip].Pitch.Max);
 
-        AudioSources.Instance.UI.PlayOneShot(clips[clip]);
+        SetSource(typeSource, pitch, clips[clip].Clip);
     }
+
+    private void SetSource(TypeAudioSource typeAudioSource, float pitch, AudioClip clip)
+    {
+        AudioSource audioSource;
+
+        switch (typeAudioSource)
+        {
+            case TypeAudioSource.Sound:
+                audioSource = AudioSources.Instance.Sound;
+                break;
+
+            case TypeAudioSource.UI:
+                audioSource = AudioSources.Instance.UI;
+                break;
+
+            default:
+                audioSource = AudioSources.Instance.Sound;
+                break;
+        }
+
+        audioSource.pitch = pitch;
+
+        audioSource.PlayOneShot(clip);
+    }
+}
+
+[System.Serializable]
+public struct AudioClipPreset
+{
+    public AudioClip Clip;
+
+    public MinMax    Pitch;
 }
