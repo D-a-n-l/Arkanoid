@@ -33,13 +33,13 @@ namespace MiniIT.Core
             {
                 OnForce(forcable, collision);
             }
+
+            onForced?.Invoke();
         }
 
         private void OnForce(IForcable forcable, Collision2D collision)
         {
             rigidbody.linearVelocity = forcable.Force(transform, collision) * speed;
-
-            onForced?.Invoke();
         }
 
         public void OnZeroingVelocity()
