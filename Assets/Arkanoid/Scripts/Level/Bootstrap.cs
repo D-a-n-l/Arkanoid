@@ -2,6 +2,7 @@ using MiniIT.Core;
 using MiniIT.Installers;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace MiniIT.Level
@@ -18,6 +19,12 @@ namespace MiniIT.Level
 
         [SerializeField]
         private Canvas          canvasLose = null;
+
+        [SerializeField]
+        private UnityEvent OnWon = null;
+
+        [SerializeField]
+        private UnityEvent OnLost = null;
 
         private AllLevelsConfig allLevels = null;
 
@@ -120,11 +127,15 @@ namespace MiniIT.Level
             canvasWin.enabled = true;
 
             CoreEvents.onFalledBall -= Lose;
+
+            OnWon?.Invoke();
         }
 
         public void Lose()
         {
             canvasLose.enabled = true;
+
+            OnLost?.Invoke();
         }
     }
 }
