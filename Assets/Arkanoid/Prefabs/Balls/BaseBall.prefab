@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSource: 0
+  isPlayLoopStart: 1
   clips:
   - Clip: {fileID: 8300000, guid: ef798de401c6b5c4f9723a522255a64a, type: 3}
     Pitch:
@@ -249,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5024579333313465779}
-  speed: 10
+  speed: 7.5
   damage: 1
   onForced:
     m_PersistentCalls:
