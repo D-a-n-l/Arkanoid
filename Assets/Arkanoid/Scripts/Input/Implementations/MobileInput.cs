@@ -5,7 +5,7 @@ namespace MiniIT.INPUT
 
     public class MobileInput : IInput, IInputClicker
     {
-        private float maxDelayBetweenClick = 0.2f;
+        private float maxDelayBetweenClick = 0.4f;
 
         private float firstClickTime = 0;
 
