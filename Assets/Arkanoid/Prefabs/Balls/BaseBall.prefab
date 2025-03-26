@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeSource: 0
   clips:
-  - Clip: {fileID: 8300000, guid: 1a66f0667371d7b438ef5e7cb64c74c8, type: 3}
+  - Clip: {fileID: 8300000, guid: ef798de401c6b5c4f9723a522255a64a, type: 3}
     Pitch:
       Min: 0.7
       Max: 1.3

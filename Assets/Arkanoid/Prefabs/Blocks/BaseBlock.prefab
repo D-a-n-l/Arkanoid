@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeSource: 0
   clips:
-  - Clip: {fileID: 8300000, guid: d141a181811441d4d9a40d7c39ea71da, type: 3}
+  - Clip: {fileID: 8300000, guid: cc1434015d48c264380eeadff59956d6, type: 3}
     Pitch:
       Min: 0.7
       Max: 1
@@ -225,19 +225,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeSource: 0
   clips:
-  - Clip: {fileID: 8300000, guid: 087421681ce7dac4cbbd608714126c16, type: 3}
+  - Clip: {fileID: 8300000, guid: 5ff8a0d44748c8447a7265bc86918353, type: 3}
     Pitch:
       Min: 0.7
       Max: 1
-  - Clip: {fileID: 8300000, guid: f4919abd0261fed408c31dcf88411b90, type: 3}
+  - Clip: {fileID: 8300000, guid: c311c009d7f48c0468260c74d160eca2, type: 3}
     Pitch:
       Min: 0.7
       Max: 1
-  - Clip: {fileID: 8300000, guid: 27a3782a57e710649baaea048643e9af, type: 3}
+  - Clip: {fileID: 8300000, guid: 5d5f081d094a6964a96b1820e5af81b4, type: 3}
     Pitch:
       Min: 0.7
       Max: 1
-  - Clip: {fileID: 8300000, guid: 27fcdd040207dd043a0476df34e1d6a3, type: 3}
+  - Clip: {fileID: 8300000, guid: 851e061eb7bda2340beb182a03f03d69, type: 3}
     Pitch:
       Min: 0.7
       Max: 1
