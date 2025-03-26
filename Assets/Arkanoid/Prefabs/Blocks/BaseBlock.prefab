@@ -97,8 +97,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2380938591428608736}
   hitToDestroy:
   - {fileID: -894442741, guid: bf6a44aace719e748ac822b5755ada69, type: 3}
-  - {fileID: -177133621, guid: bf6a44aace719e748ac822b5755ada69, type: 3}
-  - {fileID: -174608135, guid: bf6a44aace719e748ac822b5755ada69, type: 3}
   onHitted:
     m_PersistentCalls:
       m_Calls:
