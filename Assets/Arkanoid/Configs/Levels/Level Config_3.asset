@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41dba4c4b8f3c042ba9f9fc2576d08f, type: 3}
+  m_Name: Level Config_3
+  m_EditorClassIdentifier: 
+  DelayBetweenSpawn: 0.3
+  <Platform>k__BackingField: {fileID: 7133752513867402115, guid: 478903773443afa45aeb6a32dd422a6c, type: 3}
+  <Ball>k__BackingField:
+    Position: {x: 0, y: 0.25, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 1446902908800560931, guid: 292eedd886b6fb34c951853b35343466, type: 3}
+  <Crashables>k__BackingField:
+  - Position: {x: 0, y: 3, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7635192127716608488, guid: 85f1bbd9d732a914bb8988782d65baef, type: 3}
+  - Position: {x: 1.25, y: 2, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 5153703635666626415, guid: 31c9809955523c349a013e44b1ad3ba0, type: 3}
+  - Position: {x: 2, y: 1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7797988886444776964, guid: 4539fea7a37f11548b5b11e2dceea9ea, type: 3}
+  - Position: {x: 1.25, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7488709858913089112, guid: 22bf77b1f6a4e7745a4265613f900116, type: 3}
+  - Position: {x: 0, y: -1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 5650309260072696016, guid: 0a6c3e7a7fcdf6342a019d0ef7e22c4d, type: 3}
+  - Position: {x: -1.25, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7635192127716608488, guid: 9aa47bf4aa181774888aee00abac8df4, type: 3}
+  - Position: {x: -2, y: 1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 5153703635666626415, guid: a40b65593e5e0fb4c8bf00d47d7a59a6, type: 3}
+  - Position: {x: -1.25, y: 2, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7797988886444776964, guid: 05bfc309b5b80d243b4d79a4db16a4bd, type: 3}
+  - Position: {x: 0, y: 2, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7488709858913089112, guid: efde21d186e364642b5748dee33be32a, type: 3}
+  - Position: {x: 1, y: 1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 5650309260072696016, guid: 1276beb8ac227854397e8d0de86be7dc, type: 3}
+  - Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7488709858913089112, guid: ca7fcfc25541e314ea4484aedf7af39f, type: 3}
+  - Position: {x: -1, y: 1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7488709858913089112, guid: 0d7fa6f7e34720846b2da5ee692ce6e0, type: 3}
+  - Position: {x: 0, y: 1, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
+    Prefab: {fileID: 7488709858913089112, guid: 78523760d09131c4a86f084c97270324, type: 3}
