@@ -19,4 +19,18 @@ namespace MiniIT.Enums
         /// <summary>Source for UI audio</summary>
         UI = 1,
     }
+
+    public enum WorkingModeCamera
+    {
+        /// <summary>This mode keeps camera height</summary>
+        ConstantHeight,
+        /// <summary>This mode keeps camera width</summary>
+        ConstantWidth,
+        /// <summary>This mode requires you to set Match value</summary>
+        MatchWidthOrHeight,
+        /// <summary>This mode always keeps area within ReferenceResolution visible at the screen</summary>
+        Expand,
+        /// <summary>This mode never allows area outside ReferenceResolution visible at the screen</summary>
+        Shrink,
+    }
 }
