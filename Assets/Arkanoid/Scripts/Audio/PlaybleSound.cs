@@ -1,52 +1,80 @@
-using MiniIT.Enums;
 using UnityEngine;
+using MiniIT.ENUMS;
+using MiniIT.PRESETS;
+using UnityEngine.Audio;
 
-public class PlaybleSound : MonoBehaviour
+namespace MiniIT.AUDIO
 {
-    [SerializeField]
-    private TypeAudioSource typeSource = TypeAudioSource.Sound;
-
-    [SerializeField]
-    private AudioClipPreset[] clips = null;
-
-    public void Play()
+    public class PlaybleSound : MonoBehaviour
     {
-        int clip = Random.Range(0, clips.Length);
+        [SerializeField]
+        private TypeAudioSource   typeSource = TypeAudioSource.Sound;
 
-        float pitch = Random.Range(clips[clip].Pitch.Min, clips[clip].Pitch.Max);
+        [SerializeField]
+        private AudioClipPreset[] clips = null;
 
-        SetSource(typeSource, pitch, clips[clip].Clip);
-    }
+        private AudioSource       source;
 
-    private void SetSource(TypeAudioSource typeAudioSource, float pitch, AudioClip clip)
-    {
-        AudioSource audioSource;
-
-        switch (typeAudioSource)
+        private void Awake()
         {
-            case TypeAudioSource.Sound:
-                audioSource = AudioSources.Instance.Sound;
-                break;
-
-            case TypeAudioSource.UI:
-                audioSource = AudioSources.Instance.UI;
-                break;
-
-            default:
-                audioSource = AudioSources.Instance.Sound;
-                break;
+            source = GetSource();
         }
 
-        audioSource.pitch = pitch;
+        public void Play()
+        {
+            int clip = Random.Range(0, clips.Length);
 
-        audioSource.PlayOneShot(clip);
+            float pitch = Random.Range(clips[clip].Pitch.Min, clips[clip].Pitch.Max);
+
+            source.pitch = pitch;
+
+            source.PlayOneShot(clips[clip].Clip);
+        }
+
+        public void PlayLoop()
+        {
+            int clip = Random.Range(0, clips.Length);
+
+            float pitch = Random.Range(clips[clip].Pitch.Min, clips[clip].Pitch.Max);
+
+            while (clips[clip].Clip == AudioSources.Instance.Music.clip)
+            {
+                clip = Random.Range(0, clips.Length);
+            }
+
+            source.pitch = pitch;
+
+            source.clip = clips[clip].Clip;
+
+            source.Play();
+
+            Invoke(nameof(PlayLoop), source.clip.length);
+        }
+
+        private AudioSource GetSource()
+        {
+            AudioSource audioSource;
+
+            switch (typeSource)
+            {
+                case TypeAudioSource.Sound:
+                    audioSource = AudioSources.Instance.Sound;
+                    break;
+
+                case TypeAudioSource.UI:
+                    audioSource = AudioSources.Instance.UI;
+                    break;
+
+                case TypeAudioSource.Music:
+                    audioSource = AudioSources.Instance.Music;
+                    break;
+
+                default:
+                    audioSource = AudioSources.Instance.Sound;
+                    break;
+            }
+
+            return audioSource;
+        }
     }
-}
-
-[System.Serializable]
-public struct AudioClipPreset
-{
-    public AudioClip Clip;
-
-    public MinMax    Pitch;
 }

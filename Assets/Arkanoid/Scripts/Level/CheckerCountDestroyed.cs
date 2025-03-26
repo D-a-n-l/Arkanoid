@@ -1,8 +1,7 @@
-using MiniIT.Installers;
 using System;
-using UnityEngine;
+using MiniIT.INSTALLERS;
 
-namespace MiniIT.Level
+namespace MiniIT.LEVEL
 {
     public class CheckerCountDestroyed : IDisposable
     {

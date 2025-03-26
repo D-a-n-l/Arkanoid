@@ -1,7 +1,7 @@
 using UnityEngine;
-using MiniIT.Enums;
+using MiniIT.ENUMS;
 
-namespace MiniIT.SupportScreen
+namespace MiniIT.SUPPORT.SCREEN
 {
     public static class ScreenPointPosition
     {

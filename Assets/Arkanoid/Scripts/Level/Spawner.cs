@@ -1,9 +1,10 @@
 using UnityEngine;
-using MiniIT.Presets;
 using System.Collections;
 using System.Collections.Generic;
+using MiniIT.PRESETS;
+using MiniIT.CONFIGS.LEVEL;
 
-namespace MiniIT.Level
+namespace MiniIT.LEVEL
 {
     public class Spawner
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MiniIT.Level
+namespace MiniIT.LEVEL
 {
     public static class CoreEvents
     {

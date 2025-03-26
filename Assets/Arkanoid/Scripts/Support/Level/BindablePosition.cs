@@ -1,14 +1,14 @@
 using UnityEngine;
-using MiniIT.SupportScreen;
-using MiniIT.Enums;
+using MiniIT.SUPPORT.SCREEN;
+using MiniIT.ENUMS;
 using NaughtyAttributes;
 
-namespace MiniIT.Support
+namespace MiniIT.SUPPORT
 {
     public class BindablePosition : MonoBehaviour
     {
         [SerializeField]
-        private bool isChangeSizeCollider = true;
+        private bool          isChangeSizeCollider = true;
 
         [ShowIf(nameof(isChangeSizeCollider))]
         [SerializeField]
@@ -29,16 +29,6 @@ namespace MiniIT.Support
         public void Set()
         {
             transform.position = ScreenPointPosition.Get(side) + offset;
-
-            if (isChangeSizeCollider == true)
-            {
-                boxCollider.size = ScreenPointPosition.GetSizeSide(side);
-            }
-        }
-
-        public void SetLocal()
-        {
-            transform.localPosition = ScreenPointPosition.Get(side) + offset;
 
             if (isChangeSizeCollider == true)
             {

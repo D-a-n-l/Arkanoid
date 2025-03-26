@@ -1,7 +1,8 @@
 using UnityEngine;
-using MiniIT.Core;
+using MiniIT.CORE;
+using MiniIT.SUPPORT;
 
-namespace MiniIT.Presets
+namespace MiniIT.PRESETS
 {
     [System.Serializable]
     public class MainSettingsPreset
@@ -21,5 +22,13 @@ namespace MiniIT.Presets
     public class GameObjectPreset : MainSettingsPreset
     {
         public GameObject Prefab = null;
+    }
+
+    [System.Serializable]
+    public struct AudioClipPreset
+    {
+        public AudioClip Clip;
+
+        public MinMax    Pitch;
     }
 }

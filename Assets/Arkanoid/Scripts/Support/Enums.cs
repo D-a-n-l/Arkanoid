@@ -1,4 +1,4 @@
-namespace MiniIT.Enums
+namespace MiniIT.ENUMS
 {
     public enum ScreenSide
     {
@@ -18,6 +18,8 @@ namespace MiniIT.Enums
         Sound = 0,
         /// <summary>Source for UI audio</summary>
         UI = 1,
+        /// <summary>Source for Music audio</summary>
+        Music = 2,
     }
 
     public enum WorkingModeCamera

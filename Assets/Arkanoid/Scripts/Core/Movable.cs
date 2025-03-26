@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace MiniIT.Core
+namespace MiniIT.CORE
 {
     public class Movable : MonoBehaviour, IForcable
     {

@@ -1,6 +1,6 @@
-namespace MiniIT.Input
+namespace MiniIT.INPUT
 {
-    using MiniIT.SupportScreen;
+    using MiniIT.SUPPORT.SCREEN;
     using UnityEngine;
 
     public class MobileInput : IInput, IInputClicker
@@ -9,9 +9,9 @@ namespace MiniIT.Input
 
         private float firstClickTime = 0;
 
-        private int maxClick = 2;
+        private int   maxClick = 2;
 
-        private int clicked = 0;
+        private int   clicked = 0;
 
         #region IInput
         public Vector2 Position(Transform transform)

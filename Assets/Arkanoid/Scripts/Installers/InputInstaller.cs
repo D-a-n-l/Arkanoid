@@ -1,8 +1,8 @@
 using UnityEngine;
-using MiniIT.Input;
+using MiniIT.INPUT;
 using Zenject;
 
-namespace MiniIT.Installers
+namespace MiniIT.INSTALLERS
 {
     public class InputInstaller : MonoInstaller
     {

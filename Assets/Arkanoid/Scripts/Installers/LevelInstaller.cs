@@ -1,9 +1,9 @@
-using MiniIT.Core;
-using MiniIT.Level;
 using UnityEngine;
+using MiniIT.CORE;
+using MiniIT.CONFIGS.LEVEL;
 using Zenject;
 
-namespace MiniIT.Installers
+namespace MiniIT.INSTALLERS
 {
     public class LevelInstaller : MonoInstaller
     {

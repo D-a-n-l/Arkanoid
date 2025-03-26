@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MiniIT.Core
+namespace MiniIT.CORE
 {
     [RequireComponent(typeof(Collider2D))]
     public class Bouncable : MonoBehaviour, IDamagable
@@ -42,7 +42,7 @@ namespace MiniIT.Core
             rigidbody.linearVelocity = forcable.Force(transform, collision) * speed;
         }
 
-        public void OnZeroingVelocity()
+        public void ZeroingVelocity()
         {
             rigidbody.linearVelocity = Vector3.zero;
         }

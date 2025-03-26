@@ -1,11 +1,14 @@
 using UnityEngine;
 
-[System.Serializable]
-public struct MinMax
+namespace MiniIT.SUPPORT
 {
-    [Range(0f, 3f)]
-    public float Min;
+    [System.Serializable]
+    public struct MinMax
+    {
+        [Range(0f, 3f)]
+        public float Min;
 
-    [Range(0f, 3f)]
-    public float Max;
+        [Range(0f, 3f)]
+        public float Max;
+    }
 }

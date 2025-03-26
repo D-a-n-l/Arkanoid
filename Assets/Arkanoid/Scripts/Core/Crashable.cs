@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
-using MiniIT.Level;
+using MiniIT.LEVEL;
 
-namespace MiniIT.Core
+namespace MiniIT.CORE
 {
     [RequireComponent(typeof(Collider2D))]
     public class Crashable : MonoBehaviour

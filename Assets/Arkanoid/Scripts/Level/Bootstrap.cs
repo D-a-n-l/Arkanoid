@@ -1,11 +1,12 @@
-using MiniIT.Core;
-using MiniIT.Installers;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using MiniIT.CORE;
+using MiniIT.INSTALLERS;
+using MiniIT.CONFIGS.LEVEL;
 using Zenject;
 
-namespace MiniIT.Level
+namespace MiniIT.LEVEL
 {
     public class Bootstrap : MonoBehaviour
     {
@@ -16,10 +17,10 @@ namespace MiniIT.Level
         private Canvas          canvasLose = null;
 
         [SerializeField]
-        private UnityEvent OnWon = null;
+        private UnityEvent      onWon = null;
 
         [SerializeField]
-        private UnityEvent OnLost = null;
+        private UnityEvent      onLost = null;
 
         private AllLevelsConfig allLevels = null;
 
@@ -87,7 +88,7 @@ namespace MiniIT.Level
         {
             yield return StartCoroutine(spawner.UnloadAll());
 
-            ball.OnZeroingVelocity();
+            ball.ZeroingVelocity();
 
             ball.transform.position = LevelInstaller.CurrentLevel.Ball.Position;
 
@@ -123,14 +124,14 @@ namespace MiniIT.Level
 
             CoreEvents.onFalledBall -= Lose;
 
-            OnWon?.Invoke();
+            onWon?.Invoke();
         }
 
         public void Lose()
         {
             canvasLose.enabled = true;
 
-            OnLost?.Invoke();
+            onLost?.Invoke();
         }
     }
 }

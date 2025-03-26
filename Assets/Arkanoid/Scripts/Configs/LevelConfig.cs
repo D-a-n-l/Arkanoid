@@ -1,10 +1,10 @@
 using UnityEngine;
-using MiniIT.Core;
-using MiniIT.Presets;
+using MiniIT.CORE;
+using MiniIT.PRESETS;
 
-namespace MiniIT.Level
+namespace MiniIT.CONFIGS.LEVEL
 {
-    [CreateAssetMenu(fileName = "Level Config", menuName = "Configs/Level")]
+    [CreateAssetMenu(fileName = "Level Config", menuName = "Configs/Level/Level")]
     public class LevelConfig : ScriptableObject
     {
         [field: Min(0)]

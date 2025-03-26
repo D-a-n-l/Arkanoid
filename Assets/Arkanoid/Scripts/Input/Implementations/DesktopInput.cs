@@ -1,7 +1,7 @@
-namespace MiniIT.Input
+namespace MiniIT.INPUT
 {
     using UnityEngine;
-    using MiniIT.SupportScreen;
+    using MiniIT.SUPPORT.SCREEN;
 
     public class DesktopInput : IInput, IInputClicker
     {

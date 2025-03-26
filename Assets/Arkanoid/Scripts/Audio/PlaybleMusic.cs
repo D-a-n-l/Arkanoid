@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class PlaybleMusic : MonoBehaviour
+namespace MiniIT.AUDIO
 {
-    [SerializeField]
-    private AudioClip[] clips = new AudioClip[1];
-
-    private void Start()
+    public class PlaybleMusic : MonoBehaviour
     {
-        PlayLoop();
-    }
+        [SerializeField]
+        private AudioClip[] clips = new AudioClip[1];
 
-    private void PlayLoop()
-    {
-        int clip = Random.Range(0, clips.Length);
-
-        while (clips[clip] == AudioSources.Instance.Music.clip)
+        private void Start()
         {
-            clip = Random.Range(0, clips.Length);
+            PlayLoop();
         }
 
-        AudioSources.Instance.Music.clip = clips[clip];
+        private void PlayLoop()
+        {
+            int clip = Random.Range(0, clips.Length);
 
-        AudioSources.Instance.Music.Play();
+            while (clips[clip] == AudioSources.Instance.Music.clip)
+            {
+                clip = Random.Range(0, clips.Length);
+            }
 
-        Invoke(nameof(PlayLoop), AudioSources.Instance.Music.clip.length);
+            AudioSources.Instance.Music.clip = clips[clip];
+
+            AudioSources.Instance.Music.Play();
+
+            Invoke(nameof(PlayLoop), AudioSources.Instance.Music.clip.length);
+        }
     }
 }
