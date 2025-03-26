@@ -1,5 +1,6 @@
 using UnityEngine;
 using MiniIT.Enums;
+using NaughtyAttributes;
 
 public class CameraScaler : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CameraScaler : MonoBehaviour
     [SerializeField]
     private WorkingModeCamera mode = WorkingModeCamera.ConstantWidth;
 
+    [ShowIf(nameof(mode), WorkingModeCamera.MatchWidthOrHeight)]
     [Range(0f, 1f)]
     [SerializeField]
     private float matchWidthOrHeight = 0.5f;

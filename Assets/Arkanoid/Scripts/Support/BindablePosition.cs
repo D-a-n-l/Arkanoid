@@ -1,6 +1,7 @@
 using UnityEngine;
 using MiniIT.SupportScreen;
 using MiniIT.Enums;
+using NaughtyAttributes;
 
 namespace MiniIT.Support
 {
@@ -9,6 +10,7 @@ namespace MiniIT.Support
         [SerializeField]
         private bool isChangeSizeCollider = true;
 
+        [ShowIf(nameof(isChangeSizeCollider))]
         [SerializeField]
         private BoxCollider2D boxCollider = null;
 
