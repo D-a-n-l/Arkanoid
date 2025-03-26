@@ -1,4 +1,5 @@
 using UnityEngine;
+using MiniIT.Core;
 using MiniIT.Presets;
 
 namespace MiniIT.Level
@@ -11,7 +12,7 @@ namespace MiniIT.Level
         public float              DelayBetweenSpawn = 1f;
 
         [field: SerializeField]
-        public MovablePreset      Platform { get; private set; } = new MovablePreset();
+        public Movable            Platform { get; private set; } = null;
 
         [field: SerializeField]
         public BouncablePreset    Ball { get; private set; } = new BouncablePreset();
