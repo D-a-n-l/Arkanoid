@@ -13,7 +13,7 @@ public class CameraScaler : MonoBehaviour
     [SerializeField]
     private float matchWidthOrHeight = 0.5f;
 
-    private Camera componentCamera = Camera.main;
+    private Camera componentCamera = null;
 
     private float targetAspect = 1;
 
@@ -23,6 +23,8 @@ public class CameraScaler : MonoBehaviour
 
     private void Awake()
     {
+        componentCamera = Camera.main;
+
         initialSize = componentCamera.orthographicSize;
 
         targetAspect = referenceResolution.x / referenceResolution.y;
