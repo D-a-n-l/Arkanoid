@@ -12,12 +12,6 @@ namespace MiniIT.Presets
     }
 
     [System.Serializable]
-    public class MovablePreset : MainSettingsPreset
-    {
-        public Movable Prefab = null;
-    }
-
-    [System.Serializable]
     public class BouncablePreset : MainSettingsPreset
     {
         public Bouncable Prefab = null;
