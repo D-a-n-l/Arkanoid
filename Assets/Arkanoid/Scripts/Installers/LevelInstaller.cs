@@ -18,7 +18,7 @@ namespace MiniIT.Installers
 
             Container.Bind<AllLevelsConfig>().FromInstance(allLevels);
 
-            Movable platform = Container.InstantiatePrefabForComponent<Movable>(CurrentLevel.Platform.Prefab, CurrentLevel.Platform.Position, Quaternion.Euler(CurrentLevel.Platform.Rotation), null);
+            Movable platform = Container.InstantiatePrefabForComponent<Movable>(CurrentLevel.Platform);
 
             Container.Bind<Movable>().FromInstance(platform);
 
