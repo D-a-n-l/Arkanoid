@@ -315,7 +315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 341031350}
   - component: {fileID: 341031351}
-  - component: {fileID: 341031352}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -354,11 +353,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasWin: {fileID: 1578036046}
   canvasLose: {fileID: 1043662427}
-  OnWon:
+  onWon:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1496628665}
-        m_TargetAssemblyTypeName: PlaybleSound, Assembly-CSharp
+        m_TargetAssemblyTypeName: MiniIT.AUDIO.PlaybleAudio, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -369,11 +368,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnLost:
+  onLost:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1666236438}
-        m_TargetAssemblyTypeName: PlaybleSound, Assembly-CSharp
+        m_TargetAssemblyTypeName: MiniIT.AUDIO.PlaybleAudio, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -384,21 +383,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &341031352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341031348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eef60f9f3f577d47ad94751915c15ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 0ea5c0a93514e584ba3adbc70a92b49e, type: 3}
-  - {fileID: 8300000, guid: 908cd8f8931f0fa40a294fcc734e487b, type: 3}
 --- !u!1 &460871892
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSource: 1
+  isPlayLoopStart: 1
   clips:
   - Clip: {fileID: 8300000, guid: 664d2e3f89410b646a8503006f97611f, type: 3}
     Pitch:
@@ -658,6 +643,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461094579}
   m_CullTransparentMesh: 1
+--- !u!1 &561341942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561341944}
+  - component: {fileID: 561341943}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &561341943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561341942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6a3f5f88a12f84ea165839437175a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeSource: 2
+  isPlayLoopStart: 1
+  clips:
+  - Clip: {fileID: 8300000, guid: 0ea5c0a93514e584ba3adbc70a92b49e, type: 3}
+    Pitch:
+      Min: 1
+      Max: 1
+  - Clip: {fileID: 8300000, guid: 908cd8f8931f0fa40a294fcc734e487b, type: 3}
+    Pitch:
+      Min: 1
+      Max: 1
+--- !u!4 &561341944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561341942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678044737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSource: 0
+  isPlayLoopStart: 1
   clips:
   - Clip: {fileID: 8300000, guid: a66a6177e6ec8774ca50af9b7e72ce2e, type: 3}
     Pitch:
@@ -1740,6 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSource: 0
+  isPlayLoopStart: 1
   clips:
   - Clip: {fileID: 8300000, guid: ca5c69aa28074304d9bd98e051483c60, type: 3}
     Pitch:
@@ -1931,6 +1973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeSource: 1
+  isPlayLoopStart: 1
   clips:
   - Clip: {fileID: 8300000, guid: 664d2e3f89410b646a8503006f97611f, type: 3}
     Pitch:
@@ -2196,6 +2239,7 @@ SceneRoots:
   - {fileID: 198134137}
   - {fileID: 1578036047}
   - {fileID: 1043662428}
+  - {fileID: 561341944}
   - {fileID: 341031350}
   - {fileID: 989104843}
   - {fileID: 1031407587}

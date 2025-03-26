@@ -21,9 +21,9 @@ namespace MiniIT.AUDIO
 
         private void Start()
         {
-            source = AudioSources.GetSource(typeSource);
+            source = AudioSources.Instance.GetSource(typeSource);
 
-            if (isPlayLoopStart == true)
+            if (typeSource == TypeAudioSource.Music && isPlayLoopStart == true)
             {
                 PlayLoop();
             }
