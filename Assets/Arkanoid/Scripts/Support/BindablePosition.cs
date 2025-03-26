@@ -7,6 +7,9 @@ namespace MiniIT.Support
     public class BindablePosition : MonoBehaviour
     {
         [SerializeField]
+        private bool isChangeSizeCollider = true;
+
+        [SerializeField]
         private BoxCollider2D boxCollider = null;
 
         [Space(10)]
@@ -18,9 +21,27 @@ namespace MiniIT.Support
 
         private void Start()
         {
+            Set();
+        }
+
+        public void Set()
+        {
             transform.position = ScreenPointPosition.Get(side) + offset;
 
-            boxCollider.size = ScreenPointPosition.GetSizeSide(side);
+            if (isChangeSizeCollider == true)
+            {
+                boxCollider.size = ScreenPointPosition.GetSizeSide(side);
+            }
+        }
+
+        public void SetLocal()
+        {
+            transform.localPosition = ScreenPointPosition.Get(side) + offset;
+
+            if (isChangeSizeCollider == true)
+            {
+                boxCollider.size = ScreenPointPosition.GetSizeSide(side);
+            }
         }
     }
 }
