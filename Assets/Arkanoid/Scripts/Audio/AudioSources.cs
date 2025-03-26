@@ -1,3 +1,4 @@
+using MiniIT.ENUMS;
 using UnityEngine;
 
 namespace MiniIT.AUDIO
@@ -27,6 +28,32 @@ namespace MiniIT.AUDIO
             }
 
             DontDestroyOnLoad(gameObject);
+        }
+
+        public static AudioSource GetSource(TypeAudioSource typeSource)
+        {
+            AudioSource audioSource;
+
+            switch (typeSource)
+            {
+                case TypeAudioSource.Sound:
+                    audioSource = Instance.Sound;
+                    break;
+
+                case TypeAudioSource.UI:
+                    audioSource = Instance.UI;
+                    break;
+
+                case TypeAudioSource.Music:
+                    audioSource = Instance.Music;
+                    break;
+
+                default:
+                    audioSource = Instance.Sound;
+                    break;
+            }
+
+            return audioSource;
         }
     }
 }
