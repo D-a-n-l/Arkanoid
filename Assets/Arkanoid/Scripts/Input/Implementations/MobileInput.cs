@@ -1,11 +1,11 @@
 namespace MiniIT.INPUT
 {
-    using MiniIT.SUPPORT.SCREEN;
     using UnityEngine;
+    using MiniIT.SUPPORT.SCREEN;
 
     public class MobileInput : IInput, IInputClicker
     {
-        private float maxDelayBetweenClick = 0.4f;
+        private float maxDelayBetweenClick = 0.5f;
 
         private float firstClickTime = 0;
 
